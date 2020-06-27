@@ -8,10 +8,10 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class HomeComponent implements OnInit {
 
-  popular: any[] = [];
+  public popular: any[] = [];
 
   constructor(private moviesService: MoviesService) {
-    this.moviesService.getPopular$().subscribe( data => this.popular = data );
+    this.moviesService.getPopular$().subscribe( data => { console.log(data); this.popular = data; });
   }
 
   ngOnInit(): void {

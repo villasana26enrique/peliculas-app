@@ -10,6 +10,7 @@ import { SearchComponent } from './components/search/search.component';
 import { DetailComponent } from './components/detail/detail.component';
 
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { CutInDotPipe } from './pipes/cut-in-dot.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HomeComponent,
     SearchComponent,
-    DetailComponent
+    DetailComponent,
+    CutInDotPipe
   ],
   imports: [
     BrowserModule,
