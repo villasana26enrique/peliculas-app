@@ -13,9 +13,12 @@ export class MoviesService {
   constructor( private http: HttpClient ) { }
 
   getPopular$() {
+    const URL = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
+    return this.http.jsonp( URL, 'JSONP_CALLBACK' ).pipe( map( (res: any) => res.results ));
+  }
 
-    let url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
-
-    return this.http.jsonp( url, 'JSONP_CALLBACK' ).pipe( map( (res: any) => res.results ));
+  getMovie$(movieId: string) {
+    const URL = `${ this.urlMoviedb }/movie/${ movieId}?api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
+    return this.http.jsonp( URL, 'JSONP_CALLBACK' ).pipe( map( (res: any) => res ));
   }
 }

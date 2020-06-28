@@ -1,1 +1,19 @@
-<p>detail works!</p>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-dark">
+        <div class="row">
+            <div class="col ml-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="http://image.tmdb.org/t/p/w300/{{movie.poster_path}}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-8">
+                <h1 class="display-4">{{ movie.original_title }}&nbsp;</h1>
+                <h3>{{ movie.tagline }}</h3>
+                <p class="lead">{{ movie.overview }}</p>
+                <div>
+                    <i class="fas fa-star"></i>&nbsp;{{movie.vote_average}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
