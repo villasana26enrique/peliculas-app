@@ -11,6 +11,7 @@ import { DetailComponent } from './components/detail/detail.component';
 
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { CutInDotPipe } from './pipes/cut-in-dot.pipe';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CutInDotPipe } from './pipes/cut-in-dot.pipe';
     HomeComponent,
     SearchComponent,
     DetailComponent,
-    CutInDotPipe
+    CutInDotPipe,
+    CardsComponent
   ],
   imports: [
     BrowserModule,

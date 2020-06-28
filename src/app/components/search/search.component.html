@@ -1,1 +1,6 @@
-<p>search works!</p>
+<div class="row">
+    <div class="col">
+        <input type="text" (keyup)="buscar(busqueda.value)" class="form-control" placeholder="Buscar Artista..." #busqueda>
+    </div>
+</div>
+<app-cards class="m-2" [movies]="movies"></app-cards>

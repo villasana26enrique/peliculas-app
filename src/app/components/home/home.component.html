@@ -1,10 +1,1 @@
-<div class="card-columns">
-    <div *ngFor="let movie of popular" class="card">
-      <img class="card-img-top" src="http://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="Card image cap">
-      <div class="card-body text-dark">
-        <h5 class="card-title text-center">{{movie.original_title}}</h5>
-        <p class="card-text">{{ movie.overview | cutInDot }}</p>
-        <p><button (click)="getMovie( movie )" class="btn btn-block btn-dark">Ver mas</button></p>
-      </div>
-    </div>
-</div>
+<app-cards [movies]="popular"></app-cards>
