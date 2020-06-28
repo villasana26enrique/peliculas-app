@@ -9,9 +9,17 @@
             <div class="col-8">
                 <h1 class="display-4">{{ movie.original_title }}&nbsp;</h1>
                 <h3>{{ movie.tagline }}</h3>
+                <hr>
                 <p class="lead">{{ movie.overview }}</p>
                 <div>
                     <i class="fas fa-star"></i>&nbsp;{{movie.vote_average}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <div *ngIf="loading">
+                    <i class="fa fa-spinner fa-spin fa-4x"></i>
                 </div>
             </div>
         </div>

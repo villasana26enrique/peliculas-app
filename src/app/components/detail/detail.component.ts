@@ -11,6 +11,7 @@ export class DetailComponent implements OnInit {
 
   public id: string;
   public movie: any = {};
+  public loading: boolean = true;
 
   constructor(private activatedRoute: ActivatedRoute,
               private moviesService: MoviesService) {
@@ -22,6 +23,7 @@ export class DetailComponent implements OnInit {
   }
 
   getMovie = (id: string) => {
-    this.moviesService.getMovie$( id ).subscribe( (data: any) => { console.log(data); this.movie = data} );
+    this.moviesService.getMovie$( id ).subscribe( (data: any) => this.movie = data );
+    this.loading = false;
   }
 }
