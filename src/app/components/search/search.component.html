@@ -1,6 +1,13 @@
 <div class="row">
     <div class="col">
-        <input type="text" (keyup)="buscar(busqueda.value)" class="form-control" placeholder="Buscar Artista..." #busqueda>
+        <input 
+            type="text" 
+            class="form-control" 
+            name="busqueda"
+            placeholder="Buscar Artista..." 
+            (keyup)="buscar()" 
+            [(ngModel)]="busqueda" 
+        >
     </div>
 </div>
-<app-cards class="m-2" [movies]="movies"></app-cards>
+<app-cards class="m-2" [movies]="moviesService.movies"></app-cards>

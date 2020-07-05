@@ -9,6 +9,7 @@ export class MoviesService {
 
   private apikey: string = '0346f17854ad21ce40bad4cab3049bcb';
   private urlMoviedb: string = 'https://api.themoviedb.org/3';
+  public movies: any[] = [];
 
   constructor( private http: HttpClient ) { }
 
@@ -24,6 +25,11 @@ export class MoviesService {
 
   searchMovie$(texto: string) {
     const URL = `${ this.urlMoviedb }/search/movie?query=${ texto }&api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
-    return this.http.jsonp( URL, 'JSONP_CALLBACK' ).pipe( map( (res: any) => res.results ));
+    return this.http.jsonp( URL, 'JSONP_CALLBACK' ).pipe( 
+      map((res: any) => {
+        this.movies = res.results;
+        return res.results;
+      })
+    );
   }
 }

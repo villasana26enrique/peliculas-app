@@ -8,15 +8,18 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class SearchComponent implements OnInit {
 
-  public movies: any[] = [];
+  public busqueda: string = '';
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(public moviesService: MoviesService) { }
 
   ngOnInit(): void {
   }
 
-  buscar( texto: string ) {
-    this.moviesService.searchMovie$( texto ).subscribe( (data: any) => this.movies = data);
+  buscar = () => {
+    if (this.busqueda.length === 0) {
+      return;
+    }
+    this.moviesService.searchMovie$( this.busqueda ).subscribe();
   }
 
 }
